@@ -1,0 +1,83 @@
+﻿@*@model IEnumerable<NewInstagramApp.Models.User>*@
+@model NewInstagramApp.Models.User
+
+@{
+    ViewData["Title"] = "UserHome";
+}
+
+@*<table class="table">
+        <tbody>
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
+
+@*<nav>
+        <table class="table">
+            <tbody>
+                @foreach(var item in Model){
+                <tr>
+                    <td>
+                        <h4>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </h4>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </nav>*@
+
+@*__________________________________Предпоследняя версия
+<nav>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>
+                    <h4>
+                        @Html.DisplayFor(modelItem => Model.UserName)
+                    </h4>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@Model.Id">Редактировать профиль</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</nav>*@
+
+<p>
+    <h4 class="Absolute-Center">
+        @Html.DisplayFor(modelItem => Model.UserName)
+    </h4>
+    <a class="btn btn-second" asp-action="Edit" asp-route-id="@Model.Id">Редактировать профиль</a>
+</p>
+<p>
+    <h5 class="Absolute-Center">
+        @Html.DisplayFor(modelItem => Model.FirstName):
+    </h5>
+</p>
+<p>
+    <h5 class="Absolute-Center">
+        @Html.DisplayFor(modelItem => Model.Status)
+    </h5>
+</p>
